@@ -129,7 +129,7 @@ rss:
 # ===============================================================
 report:
   mode: "current"                     # 可选: daily | current | incremental
-  display_mode: "platform"             # 分组维度: keyword | platform
+  display_mode: "keyword"             # 分组维度: keyword | platform
                                       # keyword: 按关键词分组显示（默认）
                                       # platform: 按平台/来源分组显示
 
@@ -161,9 +161,10 @@ display:
   #   1. 在此列表中
   #   2. 下方 regions 中对应开关为 true
   region_order:
+    - ai_analysis                     # 5️⃣ AI 分析区域
     - hotlist                         # 2️⃣ 热榜区域（关键词匹配）
     - standalone                      # 4️⃣ 独立展示区
-    - ai_analysis                     # 5️⃣ AI 分析区域
+
 
   # 推送区域开关
   # 控制各区域是否启用（配合 region_order 使用）
@@ -177,7 +178,7 @@ display:
                                       # 关闭后跳过分析，但独立展示区不受影响
 
     standalone: true                 # 独立展示区（完整热榜/RSS，不受关键词过滤）
-    ai_analysis: false                 # AI 分析区域
+    ai_analysis: true                 # AI 分析区域
 
   # 📋 独立展示区配置（仅在 regions.standalone: true 时生效）
   # 用途：将指定平台的完整热榜/RSS 单独展示，不受关键词过滤影响
@@ -322,7 +323,7 @@ storage:
 ai:
   # LiteLLM 模型格式: provider/model_name
   # 示例:
-  #   - deepseek/deepseek-chat (DeepSeek)
+    - deepseek/deepseek-chat (DeepSeek)
   #   - openai/gpt-4o (OpenAI)
   #   - gemini/gemini-2.5-flash (Google Gemini)
   #   - anthropic/claude-3-5-sonnet (Anthropic)
@@ -332,7 +333,7 @@ ai:
   
   model: "deepseek/deepseek-chat"
 
-  api_key: ""                       # API Key（建议使用环境变量 AI_API_KEY）
+  api_key: "AI_API_KEY"                       # API Key（建议使用环境变量 AI_API_KEY）
   
   api_base: ""                      # 自定义 API 端点（可选，大多数情况留空）
                                     # 示例: https://api.openai.com/v1（自建代理或兼容接口）
@@ -383,7 +384,7 @@ ai:
 # 模型配置见上方 ai 配置段
 # ===============================================================
 ai_analysis:
-  enabled: false                     # 是否启用 AI 分析
+  enabled: true                     # 是否启用 AI 分析
 
   # 🕐 AI 分析时间窗口控制（可选功能）
   # 用途：限制 AI 分析的时间范围，避免非必要时段消耗 API 额度
