@@ -176,6 +176,7 @@ display:
   region_order:
     - hotlist                         # 2️⃣ 热榜区域（关键词匹配）
     - standalone                      # 4️⃣ 独立展示区
+    - rss
     - ai_analysis                     # 5️⃣ AI 分析区域
 
   # 推送区域开关
@@ -200,7 +201,7 @@ display:
   # 注意：同一新闻可能同时出现在关键词匹配区和独立展示区
   standalone:
     platforms: ["zhihu", "weibo", "toutiao", "cls-hot", "douyin"]    # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
-    rss_feeds: []                     # RSS 源 ID 列表（如 ["hacker-news"]）
+    rss_feeds: ["dongdongqiang","danwang","paulgraham","newslab","stratechery"]     # RSS 源 ID 列表（如 ["hacker-news"]）
     max_items: 20                     # 每个源最多展示条数（0=不限制）
 
 
