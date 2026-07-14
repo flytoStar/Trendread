@@ -106,13 +106,13 @@ rss:
     
     - id: "paulgraham"
       name: "paulgraham"
-      url: "https://paulgraham.com/rss.html"
+      url: "http://www.aaronsw.com/2002/feeds/pgessays.rss"
       enabled: true   
       max_age_days: 7               # 示例：禁用过滤，推送所有文章
 
     - id: "newslab"
       name: "方可成"
-      url: "https://newsletter.newslab.info/feed"
+      url: "https://newslab.info/feed/"
       enabled: true   
       max_age_days: 7               # 示例：禁用过滤，推送所有文章
 
