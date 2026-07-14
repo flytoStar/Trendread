@@ -81,7 +81,7 @@ rss:
   freshness_filter:
     enabled: true                     # 是否启用新鲜度过滤（默认启用）
 
-    max_age_days: 3                   # 最大文章年龄（天）
+    max_age_days: 30                   # 最大文章年龄（天）
                                       # - 正整数：只推送 N 天内的文章
                                       # - 0：禁用过滤，推送所有文章
 
@@ -94,22 +94,33 @@ rss:
       name: "东东枪"
       url: "https://dongdongqiang.substack.com/feed"
       enabled: true    
-      max_age_days: 3               # 示例：只推送1天内的文章
+      max_age_days: 15               
 
     
     - id: "danwang"
       name: "胆王"
       url: "https://danwang.co/feed"
       enabled: true                  
-      max_age_days: 3
+      max_age_days: 15
 
-    # 自定义源示例
-    # - id: "custom-feed"
-    #   name: "自定义源"
-    #   url: "https://example.com/feed.xml"
-    #   enabled: false
-    #   max_age_days: 0               # 示例：禁用过滤，推送所有文章
+    
+    - id: "paulgraham"
+      name: "paulgraham"
+      url: "https://paulgraham.com/rss.html"
+      enabled: true   
+      max_age_days: 7               # 示例：禁用过滤，推送所有文章
 
+    - id: "newslab"
+      name: "方可成"
+      url: "https://newsletter.newslab.info/feed"
+      enabled: true   
+      max_age_days: 7               # 示例：禁用过滤，推送所有文章
+
+    - id: "stratechery"
+      name: "Ben Thompson"
+      url: "https://stratechery.com/feed/"
+      enabled: true   
+      max_age_days: 7               # 示例：禁用过滤，推送所有文章
 
 # ===============================================================
 # 4. 报告模式
